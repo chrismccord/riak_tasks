@@ -28,13 +28,16 @@ $ mix riak_tasks.bootstrap dev
 Riak dev cluster started
 =======================================
 
-$ ./dev2/bin/riak-admin join -f dev1@127.0.0.1
+>> ./dev2/bin/riak-admin join -f dev1@127.0.0.1
 Sent join request to dev1@127.0.0.1
 
 >> ./dev3/bin/riak-admin join -f dev1@127.0.0.1
 Sent join request to dev1@127.0.0.1
+```
 
+### Ping your cluster
 
+```bash
 $ mix riak_tasks.ping dev
 >> ./dev1/bin/riak ping
 pong
