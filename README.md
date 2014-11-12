@@ -1,6 +1,6 @@
 # RiakTasks
 
-> Simple riak cluster bootstrap and management for devand test environments
+> Simple riak cluster bootstrap and management for dev and test environments
 
 Originally ported from https://github.com/cheeseplus/2.0-riak-dev-cluster
 
@@ -11,12 +11,13 @@ Originally ported from https://github.com/cheeseplus/2.0-riak-dev-cluster
 
 ## Usage
 
-  1. Clone the repo
+  1. Clone the repo `git clone git@github.com:chrismccord/riak_tasks.git`
+  2. `cd riak_tasks`
   2. Define  your clusters in `config.exs`. Default `dev` and `test` clusters are provided for easy customization.
   3. Create a cluster!
 
 ```bash
-☁🚀 ☁ › mix riak_tasks.bootstrap dev
+$ mix riak_tasks.bootstrap dev
 >> cp -nr riak-2.0.2/ dev1
 >> cp -nr riak-2.0.2/ dev2
 >> cp -nr riak-2.0.2/ dev3
@@ -25,20 +26,16 @@ Originally ported from https://github.com/cheeseplus/2.0-riak-dev-cluster
 >> ulimit -n 65536; ./dev3/bin/riak start
 =======================================
 Riak dev cluster started
-
-HTTP API: http://127.0.0.1:11098
-
-Admin UI: http://127.0.0.1:11098/admin
 =======================================
 
->> ./dev2/bin/riak-admin join -f dev1@127.0.0.1
+$ ./dev2/bin/riak-admin join -f dev1@127.0.0.1
 Sent join request to dev1@127.0.0.1
 
 >> ./dev3/bin/riak-admin join -f dev1@127.0.0.1
 Sent join request to dev1@127.0.0.1
 
 
-☁🚀 ☁ › mix riak_tasks.ping dev
+$ mix riak_tasks.ping dev
 >> ./dev1/bin/riak ping
 pong
 
