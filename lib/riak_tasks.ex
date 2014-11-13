@@ -7,9 +7,15 @@ defmodule RiakTasks do
     end
   end
   def conf!(name, n, key) do
+    case conf(name, n, key) do
+      nil -> raise "No configuration found for '#{name}' cluster"
+      val -> val
+    end
+  end
+  def conf(name, n, key) do
     case Application.get_env(:riak_tasks, String.to_atom(name)) do
-      nodes when is_list(nodes) -> Enum.at(nodes, n - 1) |> Dict.fetch!(key)
-      _ -> raise "No configuration found for '#{name}' cluster"
+      nodes when is_list(nodes) -> Enum.at(nodes, n - 1) |> Dict.get(key)
+      nil -> nil
     end
   end
 

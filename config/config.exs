@@ -13,21 +13,24 @@ config :riak_tasks, :dev, [
    protobuf_port: 12102,
    handoff_port: 12103,
    solr_port: 12104,
-   jmx_port: 12105],
+   jmx_port: 12105,
+   admin: true],
 
   [host: "127.0.0.1",
    http_port: 12121,
    protobuf_port: 12122,
    handoff_port: 12123,
    solr_port: 12124,
-   jmx_port: 12125],
+   jmx_port: 12125,
+   admin: true],
 
   [host: "127.0.0.1",
    http_port: 12131,
    protobuf_port: 12132,
    handoff_port: 12133,
    solr_port: 12134,
-   jmx_port: 12135],
+   jmx_port: 12135,
+   admin: true],
 ]
 
 
@@ -37,20 +40,25 @@ config :riak_tasks, :test, [
    protobuf_port: 11102,
    handoff_port: 11103,
    solr_port: 11104,
-   jmx_port: 11105],
+   jmx_port: 11105,
+   admin: true],
 
   [host: "127.0.0.1",
    http_port: 11121,
    protobuf_port: 11122,
    handoff_port: 11123,
    solr_port: 11124,
-   jmx_port: 11125],
+   jmx_port: 11125,
+   admin: true],
 
   [host: "127.0.0.1",
    http_port: 11131,
    protobuf_port: 11132,
    handoff_port: 11133,
    solr_port: 11134,
-   jmx_port: 11135],
+   jmx_port: 11135,
+   admin: true],
 ]
+
+
 # import_config "#{Mix.env}.exs"
